@@ -1,0 +1,3 @@
+/Users/aureate7/Code/ThreadPool/build/CMakeFiles/ThreadPoolTest.dir
+/Users/aureate7/Code/ThreadPool/build/CMakeFiles/edit_cache.dir
+/Users/aureate7/Code/ThreadPool/build/CMakeFiles/rebuild_cache.dir
