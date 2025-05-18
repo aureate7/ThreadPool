@@ -20,7 +20,7 @@ public:
     // 提交任务，支持任意可调用对象，返回 future
     // Submit task to the pool, supports any callable, returns future
     template<class F, class... Args>
-    auto submit(F&& f, Args&&... args) -> std::future<decltype(f(args...))>;
+    auto submit(F&& f, Args&&... args) -> std::future<std::invoke_result_t<F, Args...>>;
 
 private:
     std::vector<std::thread> workers; // 工作线程列表

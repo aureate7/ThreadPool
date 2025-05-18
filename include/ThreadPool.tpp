@@ -3,9 +3,8 @@
 // 支持任意参数和返回值的可调用对象（如函数、lambda）
 // Supports any callable with parameters and return value
 template<class F, class... Args>
-auto ThreadPool::submit(F&& f, Args&&... args) -> std::future<decltype(f(args...))> {
-    using return_type = decltype(f(args...)); // 推导返回值类型
-                                            // Deduce return type
+auto ThreadPool::submit(F&& f, Args&&... args) -> std::future<std::invoke_result_t<F, Args...>> {
+    using return_type = std::invoke_result_t<F, Args...>; // 使用 C++17 推导返回值类型
 
     // 使用 packaged_task 包装任务，以支持 future
     // Use packaged_task to wrap the function for future support

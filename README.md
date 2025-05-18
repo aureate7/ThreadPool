@@ -15,7 +15,7 @@ A simple yet functional C++11 thread pool implementation.
 ### Requirements
 
 - CMake >= 3.10
-- C++11-compatible compiler (e.g. `g++`, `clang++`)
+- C++17-compatible compiler (e.g. `g++`, `clang++`)
 
 ### Compile
 
